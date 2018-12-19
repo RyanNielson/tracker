@@ -11,37 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :platform %>
-    <%= form.text_field :platform %>
+    <%= form.text_field :platform, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :thoughts %>
-    <%= form.text_area :thoughts %>
+    <%= form.text_area :thoughts, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :rating %>
-    <%= form.text_field :rating %>
+    <%= form.text_field :rating, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :released_on %>
-    <%= form.date_select :released_on %>
+    <%= form.text_field :released_on, class: 'form-control datepicker', data: { provide: 'datapicker' } %>
   </div>
 
-  <div class="field">
+  <%
+=begin%>
+ <div class="form-row">
+    <div class="form-group">
+      <%= form.label :released_on %>
+      <%= form.date_select :released_on, {start_year: 1950 }, class: 'form-control' %>
+    </div>
+  </div>
+<%
+=end%>
+
+  <div class="form-group">
     <%= form.label :completed_on %>
-    <%= form.date_select :completed_on %>
+    <%= form.date_select :completed_on, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit class: 'btn btn-primary' %>
 <% end %>

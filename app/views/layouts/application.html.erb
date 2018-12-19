@@ -10,6 +10,36 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-bottom">
+        <a class="navbar-brand" href="#">Tracker</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Games</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Movies</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row ">
+        <div class="col-md-12 py-2">
+          <% flash.each do |key, value| %>
+            <div class="<%= flash_class(key) %>">
+              <%= value %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+        <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
